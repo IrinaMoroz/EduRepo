@@ -1,0 +1,35 @@
+﻿<Window x:Class="HelloWorldFr.TasteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelloWorldFr"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="TasteWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="odpTaste"
+                            ObjectType="{x:Type sys:Enum}"
+                            MethodName="GetNames">
+            <!-- GetNames(Taste)-->
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:Taste" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <StackPanel>
+        <StackPanel.Resources>
+            <ObjectDataProvider x:Key="odpColor"
+                            ObjectType="{x:Type sys:Enum}"
+                            MethodName="GetNames">
+                <!-- GetNames(Taste)-->
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="local:Color" />
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+        </StackPanel.Resources>
+        <ComboBox ItemsSource="{Binding Source={StaticResource odpTaste}}"></ComboBox>
+        <ComboBox ItemsSource="{Binding Source={StaticResource odpColor}}"></ComboBox>
+        
+    </StackPanel>
+</Window>
