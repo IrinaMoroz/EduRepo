@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="WindowsStoreClone.UserControls.AppDetailsTitleAndBackgraound"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WindowsStoreClone.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1200" Height="500"
+             >
+    <Grid x:Name="AppViewAndBackgroundGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.50*"/>
+            <RowDefinition Height="0.50*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.05*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.05*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="BackgroundImage"
+               Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3"
+               Source="\Images\TopApps\background.jpg"
+               HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+        <Button x:Name="btnBack"
+                Grid.Column="0" Grid.Row="0"
+                Width="35" Height="35"
+                Content="&lt;"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Click="btnBack_Click"/>
+        <Grid x:Name="AppWideView"
+              Grid.Row="1"
+              Grid.Column="1"
+              Background="#2e2e2e"
+              Margin="15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.18*"/>
+                <ColumnDefinition Width="0.60*"/>
+                <ColumnDefinition Width="0.22*"/>
+            </Grid.ColumnDefinitions>
+            <Image Name="AppImage"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Source="/Images/4.png"
+                   Stretch="Uniform"
+                   VerticalAlignment="Center"
+                   Margin="15"/>
+            <StackPanel x:Name="MiddleStackPanel"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="10,0,10,0"
+                        Orientation="Vertical">
+                <Label Name="AppNameLabel" FontSize="20" Foreground="White" Content="Tea App"/>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontSize="12" Foreground="#009cfa" Content="Tea Entertaiment"/>
+                    <Label FontSize="12" Foreground="#009cfa" Content="Action"/>
+                    <Label FontSize="12" Foreground="#009cfa" Content="Tea"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontSize="12" Foreground="White" FontWeight="Bold" Content="Official club"/>
+                    <Label FontSize="12" Foreground="White" FontWeight="Bold" Content="Share"/>
+                </StackPanel>
+                <TextBlock Margin="6,0,0,0" FontSize="12" Foreground="White" TextWrapping="WrapWithOverflow">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mi magna, aliquet ac eros vitae, euismod hendrerit erat. Mauris pulvinar ex et suscipit pharetra. Nunc bibendum iaculis accumsan. Donec in velit ut nisl sollicitudin luctus. Nunc eget elit augue. Sed pulvinar tellus egestas rhoncus pretium. Vestibulum et pulvinar metus. Aliquam erat volutpat. Aenean ultrices arcu sit amet dolor condimentum convallis. Mauris sit amet vestibulum ligula, quis faucibus justo.
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Name="RightStackPanel"
+                        Grid.Row="0" Grid.Column="2"
+                        Margin="15"
+                        >
+                <Label FontSize="18" Foreground="Gray" Content="Free+"/>
+                <Button Background="#009cfa" Foreground="White">Get</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>    
+</UserControl>

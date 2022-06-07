@@ -112,7 +112,6 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="Productivity">
-
                 <ScrollViewer x:Name="ProductivityScrollViewer"
                               Margin="10"
                               HorizontalScrollBarVisibility="Hidden"

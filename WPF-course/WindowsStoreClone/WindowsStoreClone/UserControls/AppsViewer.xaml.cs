@@ -20,32 +20,41 @@ namespace WindowsStoreClone.UserControls
     /// </summary>
     public partial class AppsViewer : UserControl
     {
-        private int scrrollItemsCount = 1;
-        public List<AnApp> PresentedApps { get; private set; }
+        private const int scrrollItemsCount = 1;
+        private List<AnApp> _presentedApps;
+
+        public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAppClicked AppClicked;
+
         public AppsViewer()
         {
             InitializeComponent();
-            PresentedApps = new List<AnApp>();
-            AppsList.ItemsSource = PresentedApps;
+            _presentedApps = new List<AnApp>();
+            AppsList.ItemsSource = _presentedApps;
             for (int i = 0; i < 9; i++)
             {
                 AnApp curr = new AnApp();
-                PresentedApps.Add(curr);
+                curr.AppClicked += CurrAppClicked;
+                _presentedApps.Add(curr);
             }
         }
 
+        private void CurrAppClicked(AnApp sender, RoutedEventArgs e)
+        {
+            AppClicked(sender, e);
+        }
         private void btnScrollLeft_Click(object sender, RoutedEventArgs e)
         {
-            var widthOfOneApp = ((int)PresentedApps[0].ActualWidth) 
-                + 2 * ((int)PresentedApps[0].Margin.Left);
+            var widthOfOneApp = ((int)_presentedApps[0].ActualWidth) 
+                + 2 * ((int)_presentedApps[0].Margin.Left);
             AppsScrollView.ScrollToHorizontalOffset(
                 AppsScrollView.HorizontalOffset - scrrollItemsCount * widthOfOneApp);
         }
 
         private void btnScrollRight_Click(object sender, RoutedEventArgs e)
         {
-            var widthOfOneApp = ((int)PresentedApps[0].ActualWidth)
-                + 2 * ((int)PresentedApps[0].Margin.Left);
+            var widthOfOneApp = ((int)_presentedApps[0].ActualWidth)
+                + 2 * ((int)_presentedApps[0].Margin.Left);
             AppsScrollView.ScrollToHorizontalOffset(
                 AppsScrollView.HorizontalOffset + scrrollItemsCount * widthOfOneApp);
         }
