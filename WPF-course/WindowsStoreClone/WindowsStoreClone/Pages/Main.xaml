@@ -89,28 +89,27 @@
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="Gaming">
-                <ScrollViewer x:Name="GamingScrollViewer"
-                              Margin="10"
-                              HorizontalScrollBarVisibility="Hidden"
-                              VerticalScrollBarVisibility="Hidden">
+                <StackPanel>
+                    <Label HorizontalAlignment="Left"
+                               Margin="10"
+                               Content="Top Free Games"
+                               FontSize="40"/>
                     <uc:AppsViewer x:Name="GamingTopFreeGamesViewer"
                                        HorizontalAlignment="Left"
-                                       Margin="2"
-                                       Width="{Binding ElementName=GamingScrollViewer, Path=ActualWidth}"/>
-
-                </ScrollViewer>
+                                       Margin="2"/>
+                </StackPanel>
             </TabItem>
             <TabItem Header="Entertaiment">
-                <ScrollViewer x:Name="EntertaimentScrollViewer"
-                              Margin="10"
-                              HorizontalScrollBarVisibility="Hidden"
-                              VerticalScrollBarVisibility="Hidden">
+                <StackPanel>
+                    <Label HorizontalAlignment="Left"
+                               Margin="10"
+                               Content="Top Free Apps"
+                               FontSize="40"/>
                     <uc:AppsViewer x:Name="EntertaimentTopFreeAppsViewer"
-                                       HorizontalAlignment="Left"
-                                       Margin="2"
-                                       Width="{Binding ElementName=EntertaimentScrollViewer, Path=ActualWidth}"/>
+                                   HorizontalAlignment="Left"
+                                   Margin="2"/>
 
-                </ScrollViewer>
+                </StackPanel>
             </TabItem>
             <TabItem Header="Productivity">
 
@@ -118,24 +117,42 @@
                               Margin="10"
                               HorizontalScrollBarVisibility="Hidden"
                               VerticalScrollBarVisibility="Hidden">
-                    <uc:ProductivityTopApps x:Name="ProductivityAppsViewer"
+                    <StackPanel>
+                        <uc:ProductivityTopApps x:Name="ProductivityAppsViewer"
+                                       HorizontalAlignment="Left"
+                                       Margin="2"
+                                       Width="{Binding ElementName=ProductivityScrollViewer, Path=ActualWidth}"/>
+                        <Label HorizontalAlignment="Left"
+                               Margin="10"
+                               Content="Specials"
+                               FontSize="40"/>
+                        <uc:AppsViewer x:Name="ProductivitySpecialsAppsViewer"
+                                       HorizontalAlignment="Left"
+                                       Margin="2"
+                                       Width="{Binding ElementName=ProductivityScrollViewer, Path=ActualWidth}"/>
+                        <Label HorizontalAlignment="Left"
+                               Margin="10"
+                               Content="Best Selling Apps"
+                               FontSize="40"/>
+                        <uc:AppsViewer x:Name="ProductivityBestSellingAppsViewer"
                                        HorizontalAlignment="Left"
                                        Margin="2"
                                        Width="{Binding ElementName=ProductivityScrollViewer, Path=ActualWidth}"/>
 
+                    </StackPanel>
+
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="Deals">
-                <ScrollViewer x:Name="DealsScrollViewer"
-                              Margin="10"
-                              HorizontalScrollBarVisibility="Hidden"
-                              VerticalScrollBarVisibility="Hidden">
-
-                    <uc:AppsViewer x:Name="DealsTopFreeAppsViewer"
+                <StackPanel>
+                    <Label HorizontalAlignment="Left"
+                               Margin="10"
+                               Content="Deals special"
+                               FontSize="40"/>
+                    <uc:AppsViewer x:Name="DealsViewer"
                                        HorizontalAlignment="Left"
-                                       Margin="2"
-                                       Width="{Binding ElementName=DealsScrollViewer, Path=ActualWidth}"/>
-                </ScrollViewer>
+                                       Margin="2"/>
+                </StackPanel>
             </TabItem>
         </TabControl>
     </Grid>

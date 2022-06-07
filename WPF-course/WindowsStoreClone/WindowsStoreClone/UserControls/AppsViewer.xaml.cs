@@ -49,5 +49,16 @@ namespace WindowsStoreClone.UserControls
             AppsScrollView.ScrollToHorizontalOffset(
                 AppsScrollView.HorizontalOffset + scrrollItemsCount * widthOfOneApp);
         }
+
+        private void AppsScrollView_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            //fixies bug of unable to scroll if mouse over this UC
+            e.Handled = true;
+            var eventArgs = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+            eventArgs.RoutedEvent = UIElement.MouseWheelEvent;
+            eventArgs.Source = sender;
+            var parent = ((Control)sender).Parent as UIElement;
+            parent.RaiseEvent(eventArgs);
+        }
     }
 }
