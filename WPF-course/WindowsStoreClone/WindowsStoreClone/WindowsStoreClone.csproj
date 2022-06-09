@@ -88,8 +88,17 @@
     <Compile Include="UserControls\AppsViewer.xaml.cs">
       <DependentUpon>AppsViewer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\HamburgerMenuViews\AllOwned.xaml.cs">
+      <DependentUpon>AllOwned.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\HamburgerMenuViews\HamburgerMenuApp.xaml.cs">
       <DependentUpon>HamburgerMenuApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HamburgerMenuViews\HamburgerMenuAppList.xaml.cs">
+      <DependentUpon>HamburgerMenuAppList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HamburgerMenuViews\HamburgerMenuHeader.xaml.cs">
+      <DependentUpon>HamburgerMenuHeader.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\HeaderRightButtons.xaml.cs">
       <DependentUpon>HeaderRightButtons.xaml</DependentUpon>
@@ -152,7 +161,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\HamburgerMenuViews\AllOwned.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\HamburgerMenuViews\HamburgerMenuApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HamburgerMenuViews\HamburgerMenuAppList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HamburgerMenuViews\HamburgerMenuHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -220,20 +241,20 @@
     <Resource Include="Images\021-podcast.png" />
     <Resource Include="Images\022-wallet passes app.png" />
     <Resource Include="Images\023-app store.png" />
-    <Resource Include="Images\024-books.png" />
-    <Resource Include="Images\025-settings.png" />
-    <Resource Include="Images\026-tips.png" />
-    <Resource Include="Images\027-remote control.png" />
-    <Resource Include="Images\028-voice message app.png" />
-    <Resource Include="Images\029-find my gadget app.png" />
-    <Resource Include="Images\030-shortcut script app.png" />
-    <Resource Include="Images\031-translate.png" />
-    <Resource Include="Images\032-smartwatch app.png" />
-    <Resource Include="Images\033-calculator.png" />
-    <Resource Include="Images\034-music store app.png" />
-    <Resource Include="Images\035-contacts.png" />
-    <Resource Include="Images\036-browser.png" />
-    <Resource Include="Images\037-bank.png" />
+    <Resource Include="Images\MiniIcons\024-books.png" />
+    <Resource Include="Images\MiniIcons\025-settings.png" />
+    <Resource Include="Images\MiniIcons\026-tips.png" />
+    <Resource Include="Images\MiniIcons\027-remote control.png" />
+    <Resource Include="Images\MiniIcons\028-voice message app.png" />
+    <Resource Include="Images\MiniIcons\029-find my gadget app.png" />
+    <Resource Include="Images\MiniIcons\030-shortcut script app.png" />
+    <Resource Include="Images\MiniIcons\031-translate.png" />
+    <Resource Include="Images\MiniIcons\032-smartwatch app.png" />
+    <Resource Include="Images\MiniIcons\033-calculator.png" />
+    <Resource Include="Images\MiniIcons\034-music store app.png" />
+    <Resource Include="Images\MiniIcons\035-contacts.png" />
+    <Resource Include="Images\MiniIcons\036-browser.png" />
+    <Resource Include="Images\MiniIcons\037-bank.png" />
     <Resource Include="Images\038-like.png" />
     <Resource Include="Images\039-twitter.png" />
     <Resource Include="Images\040-youtube.png" />
@@ -294,5 +315,6 @@
   <ItemGroup>
     <Resource Include="Images\TopApps\background.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
