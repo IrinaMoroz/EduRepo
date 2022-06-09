@@ -33,7 +33,7 @@
                Source="/Images/TopApps/HotspotShield.png"
                Margin="2"
                Name="ImageTop1"
-               MouseUp="ImageTop1_MouseUp" />
+               MouseUp="MainPic_MouseUp" />
         <Image Grid.Column="3" Grid.Row="1"
                VerticalAlignment="Stretch"
                HorizontalAlignment="Stretch"
@@ -41,7 +41,7 @@
                Source="/Images/TopApps/HotspotShield.png"
                Margin="2"
                Name="ImageTop2"
-               MouseUp="ImageTop2_MouseUp" />     
+               MouseUp="MainPic_MouseUp" />     
         
         <Image Grid.Column="3" Grid.Row="2"
                VerticalAlignment="Stretch"
@@ -50,7 +50,7 @@
                Source="/Images/TopApps/Photoshop.png"
                Margin="2"
                Name="ImageBottom4"
-               MouseUp="ImageBottom4_MouseUp" />
+               MouseUp="MainPic_MouseUp" />
         
         <Image Grid.Column="2" Grid.Row="2"
                VerticalAlignment="Stretch"
@@ -59,7 +59,7 @@
                Source="/Images/TopApps/Photoshop.png"
                Margin="2"
                Name="ImageBottom5"
-               MouseUp="ImageBottom5_MouseUp" />
+               MouseUp="MainPic_MouseUp" />
         <Grid x:Name="BottomGrid"
               Grid.Row="3"
               Grid.Column="0"
@@ -76,7 +76,8 @@
                     FontSize="18"
                     Grid.Row="0"
                     Grid.Column="0"
-                    Margin="2">Top Apps</Button>
+                    Margin="2"
+                    Click="TopAppsButton_Click">Top Apps</Button>
             <Button x:Name="FeaturedButton"
                     FontSize="18"
                     Grid.Row="0"

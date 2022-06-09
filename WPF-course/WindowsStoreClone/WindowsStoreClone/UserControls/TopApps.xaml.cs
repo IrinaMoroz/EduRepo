@@ -20,6 +20,12 @@ namespace WindowsStoreClone.UserControls
     /// </summary>
     public partial class TopApps : UserControl
     {
+        public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAppClicked AppClicked;
+
+        public delegate void OnTopAppClicked(object sender, RoutedEventArgs e);
+        public event OnTopAppClicked TopAppClicked;
+
         public TopApps()
         {
             InitializeComponent();
@@ -27,32 +33,13 @@ namespace WindowsStoreClone.UserControls
 
         private void MainPic_MouseUp(object sender, MouseButtonEventArgs e)
         {
-
+            var image = sender as Image;
+            AppClicked(new AnApp { AppName = image.Name, AppImageSource = image.Source }, e);
         }
 
-        private void ImageTop1_MouseUp(object sender, MouseButtonEventArgs e)
+        private void TopAppsButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ImageTop2_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void ImageBottom3_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void ImageBottom4_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void ImageBottom5_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
+            TopAppClicked(sender, e);
         }
     }
 }

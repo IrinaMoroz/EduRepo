@@ -25,22 +25,34 @@ namespace WindowsStoreClone.Pages
         public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
         public event OnAppClicked AppClicked;
 
+        public delegate void OnTopAppClicked(object sender, RoutedEventArgs e);
+        public event OnTopAppClicked TopAppClicked;
+
         public Main()
         {
             InitializeComponent();
             DealsViewer.AppClicked += (sender, e) => { AppClicked(sender, e); };
 
-            ProductivityBestSellingAppsViewer.AppClicked += AnAppClicked;
-            ProductivitySpecialsAppsViewer.AppClicked    += AnAppClicked;
-            EntertaimentTopFreeAppsViewer.AppClicked     += AnAppClicked;
-            GamingTopFreeGamesViewer.AppClicked          += AnAppClicked;
-            TopFreeGamesViewer.AppClicked                += AnAppClicked;
-            TopFreeAppsViewer.AppClicked                 += AnAppClicked;
-            MostPopularViewer.AppClicked                 += AnAppClicked;
-            FeaturesAppsViewer.AppClicked                += AnAppClicked;
+            ucTopApps.AppClicked += AnApp_Click;
+            ucTopApps.TopAppClicked += TopApp_Click;
+            ProductivityAppsViewer.AppClicked += AnApp_Click;
+
+            ProductivityBestSellingAppsViewer.AppClicked += AnApp_Click;
+            ProductivitySpecialsAppsViewer.AppClicked    += AnApp_Click;
+            EntertaimentTopFreeAppsViewer.AppClicked     += AnApp_Click;
+            GamingTopFreeGamesViewer.AppClicked          += AnApp_Click;
+            TopFreeGamesViewer.AppClicked                += AnApp_Click;
+            TopFreeAppsViewer.AppClicked                 += AnApp_Click;
+            MostPopularViewer.AppClicked                 += AnApp_Click;
+            FeaturesAppsViewer.AppClicked                += AnApp_Click;
         }
 
-        private void AnAppClicked(AnApp sender, RoutedEventArgs e)
+        private void TopApp_Click(object sender, RoutedEventArgs e)
+        {
+            TopAppClicked(sender, e); 
+        }
+
+        private void AnApp_Click(AnApp sender, RoutedEventArgs e)
         {
             AppClicked(sender, e);
         }

@@ -20,54 +20,23 @@ namespace WindowsStoreClone.UserControls
     /// </summary>
     public partial class ProductivityTopApps : UserControl
     {
+        public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAppClicked AppClicked;
+
         public ProductivityTopApps()
         {
             InitializeComponent();
         }
 
-        private void ImageTop10_MouseUp(object sender, MouseButtonEventArgs e)
+        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
-
-        }
-
-        private void ImageBottom52_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void ImageBottom50_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void ImageBottom4_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void ImageTop2_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void ImageBottom5_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void ImageTop10_MouseUp_1(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void MainPic_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void ImageBottom51_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
+            var image = sender as Image;
+            var app = new AnApp
+            {
+                AppName = image.Name,
+                AppImageSource = image.Source
+            };
+            AppClicked(app, e);
         }
     }
 }

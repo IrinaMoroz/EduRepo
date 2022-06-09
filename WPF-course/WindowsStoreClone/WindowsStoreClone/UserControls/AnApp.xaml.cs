@@ -22,8 +22,8 @@ namespace WindowsStoreClone.UserControls
     /// </summary>
     public partial class AnApp : UserControl
     {
-        public string AppName { get; private set; }
-        public ImageSource AppImageSource { get; private set; }
+        public string AppName { get; set; }
+        public ImageSource AppImageSource { get; set; }
 
         public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
         public event OnAppClicked AppClicked;

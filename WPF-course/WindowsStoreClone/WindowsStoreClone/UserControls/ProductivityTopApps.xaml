@@ -24,24 +24,24 @@
                Stretch="Fill"
                Source="/Images/TopApps/ACDSee.png"
                Margin="2"
-               Name="MainPic"
-               MouseUp="MainPic_MouseUp"/>
+               Name="ACDSee"
+               MouseUp="Image_MouseUp"/>
         <Image Grid.Column="2" Grid.Row="0"  Grid.ColumnSpan="2" Grid.RowSpan="2"
                VerticalAlignment="Stretch"
                HorizontalAlignment="Stretch"
                Stretch="Fill"
                Source="/Images/TopApps/HotspotShield.png"
                Margin="2"
-               Name="ImageTop10"
-               MouseUp="ImageTop10_MouseUp" />
+               Name="HotspotShield"
+               MouseUp="Image_MouseUp" />
         <Image Grid.Column="3" Grid.Row="2"
                VerticalAlignment="Stretch"
                HorizontalAlignment="Stretch"
                Stretch="Fill"
                Source="/Images/TopApps/Photoshop.png"
                Margin="2"
-               Name="ImageBottom4"
-               MouseUp="ImageBottom4_MouseUp" />
+               Name="Photoshop0"
+               MouseUp="Image_MouseUp" />
 
         <Image Grid.Column="2" Grid.Row="2"
                VerticalAlignment="Stretch"
@@ -49,23 +49,83 @@
                Stretch="Fill"
                Source="/Images/TopApps/Photoshop.png"
                Margin="2"
-               Name="ImageBottom50"
-               MouseUp="ImageBottom50_MouseUp" />
+               Name="Photoshop1"
+               MouseUp="Image_MouseUp" />
         <Image Grid.Column="0" Grid.Row="2"
                VerticalAlignment="Stretch"
                HorizontalAlignment="Stretch"
                Stretch="Fill"
                Source="/Images/TopApps/Photoshop.png"
                Margin="2"
-               Name="ImageBottom51"
-               MouseUp="ImageBottom51_MouseUp" />
+               Name="Photoshop2"
+               MouseUp="Image_MouseUp" />
         <Image Grid.Column="1" Grid.Row="2"
                VerticalAlignment="Stretch"
                HorizontalAlignment="Stretch"
                Stretch="Fill"
                Source="/Images/TopApps/Photoshop.png"
                Margin="2"
-               Name="ImageBottom52"
-               MouseUp="ImageBottom52_MouseUp" />
+               Name="Photoshop3"
+               MouseUp="Image_MouseUp" />
+
+        <Canvas Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="3"
+                Opacity="0.4"
+                Background="#2e2e2e"
+                IsHitTestVisible="False"
+                />
+        <Label x:Name="ACDSeeLabel"
+               Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
+               FontSize="25"
+               FontWeight="DemiBold"
+               Foreground="Wheat"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Center">
+            ACDSee
+        </Label>
+        <Label x:Name="HotspotShieldLabel"
+               Grid.Column="2" Grid.Row="0"  Grid.ColumnSpan="2" Grid.RowSpan="2"
+               FontSize="25"
+               FontWeight="DemiBold"
+               Foreground="Wheat"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Center">
+            HotspotShield
+        </Label>
+        <Label x:Name="Photoshop0Label"
+               Grid.Column="3" Grid.Row="2"
+               FontSize="25"
+               FontWeight="DemiBold"
+               Foreground="Wheat"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Center">
+            Photoshop0
+        </Label>
+        <Label x:Name="Photoshop1Label"
+               Grid.Column="2" Grid.Row="2"
+               FontSize="25"
+               FontWeight="DemiBold"
+               Foreground="Wheat"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Center">
+            Photoshop1
+        </Label>
+        <Label x:Name="Photoshop2Label"
+               Grid.Column="1" Grid.Row="2"
+               FontSize="25"
+               FontWeight="DemiBold"
+               Foreground="Wheat"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Center">
+            Photoshop2
+        </Label>
+        <Label x:Name="Photoshop3Label"
+               Grid.Column="0" Grid.Row="2"
+               FontSize="25"
+               FontWeight="DemiBold"
+               Foreground="Wheat"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Center">
+            Photoshop3
+        </Label>
     </Grid>
 </UserControl>
