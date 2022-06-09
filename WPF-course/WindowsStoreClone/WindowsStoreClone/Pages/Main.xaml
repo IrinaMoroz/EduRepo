@@ -7,7 +7,8 @@
       xmlns:uc="clr-namespace:WindowsStoreClone.UserControls"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Main">
+      Title="Main"
+      PreviewMouseDown="Page_PreviewMouseDown">
 
     <Grid x:Name="MainWindowMainGrid">
         <Grid.RowDefinitions>
@@ -25,7 +26,7 @@
                     Grid.Column="1" Grid.Row="0"
                     Grid.RowSpan="2" Grid.ColumnSpan="2"
                     ClipToBounds="True">
-            <TabItem Header="Home" Name="tbHome">
+            <TabItem Header="Home" Name="tbHome" Height="41">
                 <ScrollViewer x:Name="MainScrollViewer"
                               Margin="10"
                               HorizontalScrollBarVisibility="Hidden"
@@ -154,5 +155,8 @@
                 </StackPanel>
             </TabItem>
         </TabControl>
+        <uc:HeaderRightButtons x:Name="HeaderRightButtons"
+                               Grid.Column="2" Grid.Row="0"
+                               Grid.ColumnSpan="1"/>
     </Grid>
 </Page>

@@ -45,6 +45,13 @@ namespace WindowsStoreClone.Pages
             TopFreeAppsViewer.AppClicked                 += AnApp_Click;
             MostPopularViewer.AppClicked                 += AnApp_Click;
             FeaturesAppsViewer.AppClicked                += AnApp_Click;
+
+            HeaderRightButtons.DownloadButtonClicked += DowloadButton_Clicked;
+        }
+
+        private void DowloadButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void TopApp_Click(object sender, RoutedEventArgs e)
@@ -69,6 +76,11 @@ namespace WindowsStoreClone.Pages
             };
             element.BeginAnimation(UIElement.OpacityProperty, animation);
 
+        }
+
+        private void Page_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            HeaderRightButtons.MouseDown_OutsideOfHeaderRightButtons();
         }
     }
 }
