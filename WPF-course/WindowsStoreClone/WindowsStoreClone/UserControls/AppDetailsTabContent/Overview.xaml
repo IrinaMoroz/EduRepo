@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="WindowsStoreClone.UserControls.AppDetailsTabContent.Overview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WindowsStoreClone.UserControls.AppDetailsTabContent"
+             xmlns:uc="clr-namespace:WindowsStoreClone.UserControls"
+             mc:Ignorable="d" 
+             Name="OverviewUserControl"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Orientation="Vertical"
+                VerticalAlignment="Top"
+                Background="#2e2e2e"
+                Width="{Binding ElementName=OverviewUserControl, Path=ActualWidth}">
+        <Label FontSize="25">Available On</Label>
+        <TextBlock FontSize="12" 
+                   x:Name="tbAvailableOn" 
+                   Foreground="White"
+                   Text="PC"/>
+        <Label FontSize="25">Description</Label>
+        <TextBlock FontSize="12" 
+                   x:Name="tbDescription" 
+                   Foreground="White">Lorem ipsum</TextBlock>
+        <Label FontSize="25" Foreground="White">People also like</Label>
+        <uc:AppsViewer x:Name="AppsViewerOverviewTab"/>
+    </StackPanel>
+</UserControl>

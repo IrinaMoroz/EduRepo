@@ -67,6 +67,18 @@
     <Compile Include="UserControls\AnApp.xaml.cs">
       <DependentUpon>AnApp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AppDetailsTabContent\Overview.xaml.cs">
+      <DependentUpon>Overview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppDetailsTabContent\Review.xaml.cs">
+      <DependentUpon>Review.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppDetailsTabContent\Reviews.xaml.cs">
+      <DependentUpon>Reviews.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppDetailsTabContent\SystemRequirements.xaml.cs">
+      <DependentUpon>SystemRequirements.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AppDetailsTitleAndBackgraound.xaml.cs">
       <DependentUpon>AppDetailsTitleAndBackgraound.xaml</DependentUpon>
     </Compile>
@@ -100,6 +112,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\AnApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AppDetailsTabContent\Overview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AppDetailsTabContent\Review.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AppDetailsTabContent\Reviews.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AppDetailsTabContent\SystemRequirements.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

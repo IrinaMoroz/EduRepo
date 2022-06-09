@@ -5,8 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WindowsStoreClone.Pages"
       xmlns:uc="clr-namespace:WindowsStoreClone.UserControls"
+      xmlns:ucappdet="clr-namespace:WindowsStoreClone.UserControls.AppDetailsTabContent"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1200" d:DesignWidth="800"
       Title="AppDetails">
 
     <ScrollViewer x:Name="svAppDetails" 
@@ -27,9 +28,15 @@
                 <TabControl Name="AppDetailsTC"
                             Grid.Column="1"
                             HorizontalAlignment="Stretch">
-                    <TabItem Header="Overview"></TabItem>
-                    <TabItem Header="System Requirements"></TabItem>
-                    <TabItem Header="Reviews"></TabItem>
+                    <TabItem Header="Overview">
+                        <ucappdet:Overview x:Name="OverviewTabUC"/>
+                    </TabItem>
+                    <TabItem Header="System Requirements">
+                        <ucappdet:SystemRequirements x:Name="SystemRequirementsTabUC"/>
+                    </TabItem>
+                    <TabItem Header="Reviews">
+                        <ucappdet:Reviews x:Name="ReviewsTabUC"/>
+                    </TabItem>
                     <TabItem Header="Related"></TabItem>
                 </TabControl>
             </Grid>

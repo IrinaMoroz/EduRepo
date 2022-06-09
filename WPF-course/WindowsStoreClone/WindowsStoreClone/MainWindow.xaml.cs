@@ -34,6 +34,7 @@ namespace WindowsStoreClone
         {
             AppDetails appDetails = new AppDetails(sender);
             appDetails.BackButtonClicked += AppDetails_BackButtonClicked;
+            appDetails.AppClicked += MainWindowContentPage_AppClicked;
             MainWindowFrame.Content = appDetails;
         }
 
