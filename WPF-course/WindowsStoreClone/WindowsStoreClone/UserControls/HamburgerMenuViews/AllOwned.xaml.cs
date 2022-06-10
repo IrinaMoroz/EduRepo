@@ -20,12 +20,6 @@ namespace WindowsStoreClone.UserControls.HamburgerMenuViews
     /// </summary>
     public partial class AllOwned : UserControl
     {
-        public delegate void OnFilterClicked(object sender, RoutedEventArgs e);
-        public event OnFilterClicked FilterClicked;
-
-        public delegate void OnSortByClicked(object sender, RoutedEventArgs e);
-        public event OnSortByClicked SortByClicked;
-
         public AllOwned()
         {
             InitializeComponent();

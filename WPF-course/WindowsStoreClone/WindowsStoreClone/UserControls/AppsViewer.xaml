@@ -17,13 +17,27 @@
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="0.02*"/>
         </Grid.ColumnDefinitions>
-        <Button Width="40" Height="40" Margin="4" 
+        <Grid.Resources>
+            <Style x:Key="AccentCircleButtonStyle"
+                   BasedOn="{StaticResource MahApps.Styles.Button.Circle}"
+                   TargetType="{x:Type ButtonBase}">
+                <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.Accent}"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="{DynamicResource MathApps.Brushes.Accent}"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <Button Style="{StaticResource AccentCircleButtonStyle}"
+                Width="40" Height="40" Margin="4" 
                 Grid.Column="0" 
                 VerticalAlignment="Center" 
                 x:Name="btnScrollLeft"
                 Click="btnScrollLeft_Click"
                 Content="&lt;"/>
-        <Button Width="40" Height="40" Margin="4" 
+        <Button Style="{StaticResource AccentCircleButtonStyle}"
+                Width="40" Height="40" Margin="4" 
                 Grid.Column="2" 
                 VerticalAlignment="Center" 
                 x:Name="btnScrollRight"

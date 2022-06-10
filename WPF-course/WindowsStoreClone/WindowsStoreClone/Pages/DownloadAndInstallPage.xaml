@@ -5,27 +5,139 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WindowsStoreClone.Pages"
       xmlns:hammenu="clr-namespace:WindowsStoreClone.UserControls.HamburgerMenuViews"
+      xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
       mc:Ignorable="d" 
       Name="DAIControl"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DownloadAndInstallPage">
 
     <Grid x:Name="DAIWrapMainGrid"
-          Width="{Binding ElementName=DAIControl,Path=ActualWidth}">
+          Width="{Binding ElementName=DAIControl,Path=ActualWidth}"
+          >
+        <Grid.Resources>
+            <ResourceDictionary>
+                <DataTemplate x:Key="HamburgerMenuItem" DataType="{x:Type mah:HamburgerMenuGlyphItem}">
+                    <Grid Height="48">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0"
+                               Margin="12"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Source="{Binding Glyph}"/>
+                        <TextBlock Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   FontSize="16"
+                                   Text="{Binding Label}"/>
+                    </Grid>
+                </DataTemplate>
+                <DataTemplate x:Key="HamburgerOptionsMenuItem" DataType="{x:Type mah:HamburgerMenuItem}">
+                    <Grid Height="48">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ContentControl Grid.Column="0"
+                               Margin="12"
+                               Focusable="False"
+                               IsTabStop="False"
+                               Content="{Binding Tag}"/>
+                        <TextBlock Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   FontSize="16"
+                                   Text="{Binding Label}"/>
+                    </Grid>
+                </DataTemplate>
+                <ObjectDataProvider x:Key="DisplayModeEnumValues"
+                                    MethodName="GetValues"
+                                    ObjectType="{x:Type mah:SplitViewDisplayMode}">
+                    <ObjectDataProvider.MethodParameters>
+                        <x:Type TypeName="mah:SplitViewDisplayMode"/>
+                    </ObjectDataProvider.MethodParameters>
+                </ObjectDataProvider>
+                <ObjectDataProvider x:Key="VisibilityEnumValues"
+                                    MethodName="GetValues"
+                                    ObjectType="{x:Type Visibility}">
+                    <ObjectDataProvider.MethodParameters>
+                        <x:Type TypeName="Visibility"/>
+                    </ObjectDataProvider.MethodParameters>
+                </ObjectDataProvider>
+            </ResourceDictionary>
+        </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="35"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Grid.Column="0" Grid.Row="0"
                 Width="35" Height="35"
                 Content="&lt;"
                 HorizontalAlignment="Left" VerticalAlignment="Top"
                 Click="btnBack_Click"/>
-        <hammenu:AllOwned Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <mah:HamburgerMenu x:Name="HamburgerMenuControl"
+                           Grid.Row="1"
+                           HamburgerVisibility="Collapsed"
+                           HamburgerWidth="48"
+                           IsPaneOpen="True"
+                           ItemInvoked="HamburgerMenuControl_ItemInvoked"
+                           ItemTemplate="{StaticResource HamburgerMenuItem}"
+                           OptionsItemTemplate="{StaticResource HamburgerOptionsMenuItem}"
+                           SelectedIndex="1"
+                           Style="{StaticResource MahApps.Styles.HamburgerMenu.CreatorsUpdate}"
+                           VerticalScrollBarOnLeftSide="False">
+            <mah:HamburgerMenu.ItemsSource>
+                <mah:HamburgerMenuItemCollection>
+                    <mah:HamburgerMenuHeaderItem Label="My library"/>
+                    <mah:HamburgerMenuGlyphItem Label="All owned" Glyph="/Images/024-books.png">
+                        <mah:HamburgerMenuGlyphItem.Tag>
+                            <hammenu:AllOwned/>
+                        </mah:HamburgerMenuGlyphItem.Tag>
+                    </mah:HamburgerMenuGlyphItem>
+                    <mah:HamburgerMenuGlyphItem Label="Installed" Glyph="/Images/015-folder.png">
+                        <mah:HamburgerMenuGlyphItem.Tag>
+                            <hammenu:AllOwned/>
+                        </mah:HamburgerMenuGlyphItem.Tag>
+                    </mah:HamburgerMenuGlyphItem>
+                    <mah:HamburgerMenuGlyphItem Label="Ready to install" Glyph="/Images/038-like.png">
+                        <mah:HamburgerMenuGlyphItem.Tag>
+                            <hammenu:AllOwned/>
+                        </mah:HamburgerMenuGlyphItem.Tag>
+                    </mah:HamburgerMenuGlyphItem>
+                    <mah:HamburgerMenuGlyphItem Label="Downloads" Glyph="/Images/063-slide show app.png">
+                        <mah:HamburgerMenuGlyphItem.Tag>
+                            <hammenu:AllOwned/>
+                        </mah:HamburgerMenuGlyphItem.Tag>
+                    </mah:HamburgerMenuGlyphItem>
+                    <mah:HamburgerMenuGlyphItem Label="Included with device" Glyph="/Images/070-file hosting.png">
+                        <mah:HamburgerMenuGlyphItem.Tag>
+                            <hammenu:AllOwned/>
+                        </mah:HamburgerMenuGlyphItem.Tag>
+                    </mah:HamburgerMenuGlyphItem>
+                </mah:HamburgerMenuItemCollection>
+            </mah:HamburgerMenu.ItemsSource>
+            <mah:HamburgerMenu.ContentTemplate>
+                <DataTemplate>
+                    <Grid x:Name="ContentGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="48"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0">
+                            <TextBlock x:Name="Header"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="24"
+                                       Text="{Binding Label}"/>
+                        </Border>
+                        <mah:TransitioningContentControl x:Name="TheContent"
+                                                         Grid.Row="1"
+                                                         Focusable="False"
+                                                         Content="{Binding Tag}"/>
+                    </Grid>
+                </DataTemplate>
+            </mah:HamburgerMenu.ContentTemplate>
+        </mah:HamburgerMenu>
     </Grid>
 </Page>

@@ -31,5 +31,10 @@ namespace WindowsStoreClone.Pages
         {
             BackButtonClicked(sender, e);
         }
+
+        private void HamburgerMenuControl_ItemInvoked(object sender, MahApps.Metro.Controls.HamburgerMenuItemInvokedEventArgs args)
+        {
+            HamburgerMenuControl.Content = args.InvokedItem;
+        }
     }
 }
