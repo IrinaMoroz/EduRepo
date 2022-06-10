@@ -28,6 +28,9 @@ namespace WindowsStoreClone.Pages
         public delegate void OnTopAppClicked(object sender, RoutedEventArgs e);
         public event OnTopAppClicked TopAppClicked;
 
+        public delegate void OnDownloadButtonClicked(object sender, RoutedEventArgs e);
+        public event OnDownloadButtonClicked DownloadButtonClicked;
+
         public Main()
         {
             InitializeComponent();
@@ -51,7 +54,7 @@ namespace WindowsStoreClone.Pages
 
         private void DowloadButton_Clicked(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            DownloadButtonClicked(sender, e);
         }
 
         private void TopApp_Click(object sender, RoutedEventArgs e)

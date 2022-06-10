@@ -30,11 +30,19 @@ namespace WindowsStoreClone
             _mainWindowContentPage = new Main();
             _mainWindowContentPage.AppClicked += MainWindowContentPage_AppClicked;
             _mainWindowContentPage.TopAppClicked += MainWindowContentPage_TopAppClicked;
+            _mainWindowContentPage.DownloadButtonClicked += MainWindowContentPage_DownloadButtonClicked;
 
             _topAppsWrappedPage = new TopAppsWrap();
             _topAppsWrappedPage.AppClicked += MainWindowContentPage_AppClicked;
 
             _topAppsWrappedPage.BackButtonClicked += AppDetails_BackButtonClicked;
+        }
+
+        private void MainWindowContentPage_DownloadButtonClicked(object sender, RoutedEventArgs e)
+        {
+            DownloadAndInstallPage page = new DownloadAndInstallPage();
+            page.BackButtonClicked += AppDetails_BackButtonClicked;
+            MainWindowFrame.Content = page;
         }
 
         private void MainWindowContentPage_TopAppClicked(object sender, RoutedEventArgs e)
