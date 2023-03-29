@@ -1,1 +1,2 @@
-py "D:\Programming\Python\HelloWorld\cleansingtmp.py"
+SET var=%cd%\cleansingtmp.py
+py "%var%"
